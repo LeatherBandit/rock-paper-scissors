@@ -3,11 +3,11 @@
 function getComputerChoice() {
     randomInt = getRandomInt(1, 4);
     if (randomInt === 1) {
-        return "Rock";
+        return "rock";
     }else if (randomInt === 2) {
-        return "Paper";
+        return "paper";
     }else {
-        return "Scissors";
+        return "scissors";
     }
 }
 
@@ -23,10 +23,10 @@ function playRound(player, computer) {
     console.log("Player choice was: " +player)
 
     //Logic path if player is rock.
-    if (player === "Rock") {
-        if (computer === "Rock"){
+    if (player === "rock") {
+        if (computer === "rock"){
             return "Tie"
-        } else if (computer === "Paper") {
+        } else if (computer === "paper") {
             return "Lose"
         } else {
             return "Win"
@@ -34,10 +34,10 @@ function playRound(player, computer) {
     }
 
     //Logic path if player is paper.
-    if (player === "Paper") {
-        if (computer === "Paper"){
+    if (player === "paper") {
+        if (computer === "paper"){
             return "Tie"
-        } else if (computer === "Scissors") {
+        } else if (computer === "scissors") {
             return "Lose"
         } else {
             return "Win"
@@ -45,10 +45,10 @@ function playRound(player, computer) {
     }
 
     //Logic path if player is scissors.
-    if (player === "Scissors") {
-        if (computer === "Scissors"){
+    if (player === "scissors") {
+        if (computer === "scissors"){
             return "Tie"
-        } else if (computer === "Rock") {
+        } else if (computer === "rock") {
             return "Lose"
         } else {
             return "Win"
@@ -56,9 +56,35 @@ function playRound(player, computer) {
     }
 }
 
+function game(amount) {
 
-//No input validation for now.
-let input = prompt();
+    let playerScore = 0;
+
+    for (let i = 0; i < amount; i++) {
+        let input = prompt();
+        let roundResults = playRound(input.toLowerCase(), getComputerChoice());
+        console.log(roundResults);
+        if ( roundResults === "Win"){
+            playerScore += 1;
+        }
+    }
+
+    if (playerScore < 3) {
+        return "You lose! Your score was: " + playerScore;
+    } else {
+        return "You win! Your score was: " + playerScore;
+    }
+}
+
+
 
 //Play the game
-console.log(playRound(input, getComputerChoice()))
+console.log(game(5))
+
+
+
+//Still need to change things
+//Add counter for computer score
+//Add output for a tie
+//Add better output for each round: Round "x"
+//Add better logic for calculating winner right now it is just if < 3 you lose. 
