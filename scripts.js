@@ -59,6 +59,7 @@ function playRound(player, computer) {
 function game(amount) {
 
     let playerScore = 0;
+    let computerScore = 0;
 
     for (let i = 0; i < amount; i++) {
         let input = prompt();
@@ -66,13 +67,17 @@ function game(amount) {
         console.log(roundResults);
         if ( roundResults === "Win"){
             playerScore += 1;
+        } else if ( roundResults === "Lose") {
+            computerScore += 1;
         }
     }
 
-    if (playerScore < 3) {
-        return "You lose! Your score was: " + playerScore;
+    if (playerScore < computerScore) {
+        return "You lose! Your score was: " + playerScore + " Computer score was " + computerScore;
+    } else if (playerScore > computerScore) {
+        return "You win! Your score was: " + playerScore + " Computer score was " + computerScore;
     } else {
-        return "You win! Your score was: " + playerScore;
+        return "Tie game! Your score was: " + playerScore + " Computer score was " + computerScore;
     }
 }
 
@@ -80,11 +85,3 @@ function game(amount) {
 
 //Play the game
 console.log(game(5))
-
-
-
-//Still need to change things
-//Add counter for computer score
-//Add output for a tie
-//Add better output for each round: Round "x"
-//Add better logic for calculating winner right now it is just if < 3 you lose. 
