@@ -1,0 +1,71 @@
+body {
+    margin: 0px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    background-color: #00BDF8;
+}
+
+
+.game-wrapper {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+}
+
+.title {
+    margin: 0px;
+    padding: 0px;
+    background-color: lightcoral;
+    align-self: stretch;
+    text-align: center;
+    font-size: 7vw;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 4vw;
+    padding: 2vw;
+}
+
+.choices button {
+    width: 240px;
+    height: 240px;
+}
+
+.outcome-scores, .outcome-choices {
+    display: flex;
+    justify-content: center;
+    gap: 4vw;
+}
+
+.player-score, .computer-score, .player-choice, .computer-choice {
+    font-size: 4vw;
+    width: 41vw;
+    text-align: center;
+}
+
+
+.results {
+    text-align: center;
+    font-size: 6vw;
+}
+
+
+.disable-button {
+    background: #999;
+    color: #555;
+    cursor: not-allowed;
+    border: none;
+    pointer-events: none;
+}
+
+.reset-button {
+    width: 20vw;
+    text-align: center;
+    align-self: center;
+    font-size: 3vw;
+    margin: 2vw;
+    background-color: lightcoral;
+    border-radius: 5px;
+    visibility: hidden;
+}
